@@ -1,3 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitura de Tarot - Chamas Gêmeas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        header {
+            background-color: #6c757d;
+            color: white;
+            padding: 10px 0;
+        }
+        .cards {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .card {
+            width: 100px;
+            height: 150px;
+            margin: 10px;
+            background-color: #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .result {
+            margin: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #6c757d;
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
 <body>
     <header>
         <h1>Leitura de Tarot - Chamas Gêmeas</h1>
@@ -6,9 +60,15 @@
     <section>
         <h2>Escolha 3 cartas</h2>
         <div class="cards">
-            <div class="card" onclick="revealCard(this)" data-card="1"></div>
-            <div class="card" onclick="revealCard(this)" data-card="2"></div>
-            <div class="card" onclick="revealCard(this)" data-card="3"></div>
+            <div class="card" onclick="revealCard(this, 1)">
+                <img src="imagens/carta1.jpg" alt="Carta 1">
+            </div>
+            <div class="card" onclick="revealCard(this, 2)">
+                <img src="imagens/carta2.jpg" alt="Carta 2">
+            </div>
+            <div class="card" onclick="revealCard(this, 3)">
+                <img src="imagens/carta3.jpg" alt="Carta 3">
+            </div>
         </div>
     </section>
 
@@ -21,17 +81,17 @@
     </footer>
 
     <script>
-        function revealCard(card) {
-            const cardId = card.getAttribute("data-card");
+        function revealCard(card, cardId) {
             const messages = [
                 "Carta 1: A energia positiva está alinhada com sua chama gêmea.",
                 "Carta 2: Um desafio emocional está se aproximando.",
                 "Carta 3: O amor verdadeiro é a chave para superar as dificuldades."
             ];
-            card.style.backgroundColor = "#fff";
-            card.innerHTML = `<img src="https://via.placeholder.com/100x150" alt="Carta ${cardId}">`;
-            document.getElementById("result").innerHTML = `<p>${messages[cardId - 1]}</p>`;
+            card.querySelector("img").style.filter = "brightness(50%)";
+            document.getElementById("result").innerHTML += `<p>${messages[cardId - 1]}</p>`;
+            card.onclick = null; // Desativa o clique após selecionar
         }
     </script>
 </body>
 </html>
+
