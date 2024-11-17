@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interatividade com Cartas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="deck-container">
+    <h1>Escolha sua carta</h1>
+    <div class="deck">
+      <div class="card" data-card="1">
+        <div class="card-inner">
+          <div class="card-front">?</div>
+          <div class="card-back">Carta 1</div>
+        </div>
+      </div>
+      <div class="card" data-card="2">
+        <div class="card-inner">
+          <div class="card-front">?</div>
+          <div class="card-back">Carta 2</div>
+        </div>
+      </div>
+      <div class="card" data-card="3">
+        <div class="card-inner">
+          <div class="card-front">?</div>
+          <div class="card-back">Carta 3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
