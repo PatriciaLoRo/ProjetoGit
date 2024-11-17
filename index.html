@@ -1,0 +1,37 @@
+<body>
+    <header>
+        <h1>Leitura de Tarot - Chamas Gêmeas</h1>
+    </header>
+
+    <section>
+        <h2>Escolha 3 cartas</h2>
+        <div class="cards">
+            <div class="card" onclick="revealCard(this)" data-card="1"></div>
+            <div class="card" onclick="revealCard(this)" data-card="2"></div>
+            <div class="card" onclick="revealCard(this)" data-card="3"></div>
+        </div>
+    </section>
+
+    <div class="result" id="result">
+        <p>As interpretações aparecerão aqui.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Leitura de Tarot</p>
+    </footer>
+
+    <script>
+        function revealCard(card) {
+            const cardId = card.getAttribute("data-card");
+            const messages = [
+                "Carta 1: A energia positiva está alinhada com sua chama gêmea.",
+                "Carta 2: Um desafio emocional está se aproximando.",
+                "Carta 3: O amor verdadeiro é a chave para superar as dificuldades."
+            ];
+            card.style.backgroundColor = "#fff";
+            card.innerHTML = `<img src="https://via.placeholder.com/100x150" alt="Carta ${cardId}">`;
+            document.getElementById("result").innerHTML = `<p>${messages[cardId - 1]}</p>`;
+        }
+    </script>
+</body>
+</html>
